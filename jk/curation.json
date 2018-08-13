@@ -1,0 +1,39 @@
+{
+	"@context": [
+		"http://iiif.io/api/presentation/2/context.json",
+		"http://codh.rois.ac.jp/iiif/curation/1/context.json"
+	],
+	"@type": "cr:Curation",
+	"@id": "http://mp.ex.nii.ac.jp/api/curation/json/d234bedf-73b7-4d37-a8de-988448719070",
+	"label": "Curating list",
+	"selections": [
+		{
+			"@id": "http://164.67.17.127/images/kabuki_manifest.json/range/r1",
+			"@type": "sc:Range",
+			"label": "Manual curation by IIIF Curation Viewer",
+			"members": [
+				{
+					"@id": "http://164.67.17.127/images/kabuki/canvas/ucla_bib1987273_no001_rs_001.tif.json",
+					"@type": "sc:Canvas",
+					"label": "Ucla Bib1987273 No001 Rs 001.Tif"
+				},
+				{
+					"@id": "http://164.67.17.127/images/kabuki/canvas/ucla_bib1987273_no001_rs_001.tif.json#xywh=1016,2392,1008,1152",
+					"@type": "sc:Canvas",
+					"label": "Ucla Bib1987273 No001 Rs 001.Tif",
+					"metadata": [
+						{
+							"label": "type",
+							"value": "figure"
+						}
+					]
+				}
+			],
+			"within": {
+				"@id": "http://164.67.17.127/images/kabuki_manifest.json",
+				"@type": "sc:Manifest",
+				"label": "Kabuki"
+			}
+		}
+	]
+}

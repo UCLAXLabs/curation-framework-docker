@@ -2,7 +2,7 @@
 
 # Configurate the external URL (without trailing slash) and start port number here
 # externalurl=http://136.187.82.133/cp
-externalurl=http://192.168.0.10/cp
+externalurl=http://164.67.152.202/cp
 
 start_port=9001
 

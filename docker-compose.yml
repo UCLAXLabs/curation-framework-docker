@@ -1,0 +1,46 @@
+version: '2'
+
+services:
+  jsonkeeper:
+    build: ./JSONkeeper
+    ports:
+      - '9001:8000'
+    volumes:
+      - ./JSONkeeper/config.ini:/jsonkeeper/config.ini
+
+  canvasindexer:
+    build: ./Canvas-Indexer
+    ports:
+      #  - '9002:8000' # This only works if we're running it via gunicorn, but that fails
+      #  to index properly (for now)
+      - '9002:80'
+    volumes:
+      - ./Canvas-Indexer/config.ini:/canvasindexer/config.ini
+      - ./Canvas-Indexer/log.txt:/canvasindexer/log.txt
+
+  curationfinder:
+    build: ./IIIFCurationFinder
+    ports:
+      - '9004:80'
+
+  curationviewer:
+    build: ./IIIFCurationViewer
+    ports:
+      - '9003:80'
+
+  curationmanager:
+    build: ./IIIFCurationManager
+    ports:
+      - '9005:80'
+
+  curationeditor:
+    build: ./IIIFCurationEditor
+    ports:
+      - '9006:80'
+
+  loris:
+    image: 'lorisimageserver/loris'
+    ports:
+      - '9007:5004'
+    volumes:
+      - ./loris/images:/opt/loris/tests/img
