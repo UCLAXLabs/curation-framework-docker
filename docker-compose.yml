@@ -11,9 +11,10 @@ services:
   canvasindexer:
     build: ./Canvas-Indexer
     ports:
-      #  - '9002:8000' # This only works if we're running it via gunicorn, but that fails
-      #  to index properly (for now)
-      - '9002:80'
+      #  - '9002:8000' # This is the setting when the service is running under gunicorn.
+      #  It is failing with a proxy error for now, but I don't know why.
+      #  Setting this to 9002:80 doesn't help, even if the service is not running under gunicorn.
+      - '9002:8000'
     volumes:
       - ./Canvas-Indexer/config.ini:/canvasindexer/config.ini
       - ./Canvas-Indexer/log.txt:/canvasindexer/log.txt
@@ -38,9 +39,9 @@ services:
     ports:
       - '9006:80'
 
-  loris:
-    image: 'lorisimageserver/loris'
-    ports:
-      - '9007:5004'
-    volumes:
-      - ./loris/images:/opt/loris/tests/img
+#  loris:
+#    image: 'lorisimageserver/loris'
+#    ports:
+#      - '9007:5004'
+#    volumes:
+#      - ./loris/images:/opt/loris/tests/img
