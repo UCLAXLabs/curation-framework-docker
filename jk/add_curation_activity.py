@@ -8,10 +8,10 @@ def _get_curation_json():
     #curation_json = '''
     #    {{
     #'''
-    with open('curation_1.json') as curationFile:
+    with open('tf_curation.json') as curationFile:
       c_json = json.load(curationFile)
       curation_json = json.dumps(c_json)
-      print(str(curation_json))
+      #print(str(curation_json))
 
     return curation_json
 
@@ -27,7 +27,8 @@ def _upload_JSON_LD():
     #                             'X-Access-Token': 'foo',
     #                            },
     #                    data=curation_json)
-    url = "http://164.67.152.202/cp/curation/api"
+    #url = "http://164.67.31.25/cp/curation/api"
+    url = "http://127.0.0.1:5000/api"
     #resp = requests.post(url, headers={'Accept': 'application/json',
     #                                   'Content-Type': 'application/json',
     #                                   'X-Access-Token': 'foo',
